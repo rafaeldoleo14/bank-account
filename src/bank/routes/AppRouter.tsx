@@ -7,7 +7,7 @@ export const AppRouter = () => {
 
       <Route path='/new-account' element={<h1>Hello World</h1>}/>
 
-      <Route path='/list-accouts' element={<h1>Hello World 2</h1>}/>
+      <Route path='/list-accounts' element={<h1>Hello World 2</h1>}/>
 
       <Route path='/get-data' element={<h1>Hello World 3</h1>}/>
 
