@@ -1,0 +1,42 @@
+.form-field{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    height: 100%;
+}
+
+.form-field form{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat( auto-fit, minmax(450px, 1fr) );
+}
+
+.form-field form input, 
+.form-field form select{
+    border: none;
+    outline: none;
+    padding: 15px 10px;
+    border: 2px solid #4859a5;
+    border-radius: 5px;
+}
+
+.form-field input::placeholder{
+    color: rgba(128, 128, 128, 0.789);
+}
+
+
+.form-field form button{
+    border: none;
+    outline: none;
+    background-color: #4859a5;
+    color: white;
+    padding: 20px 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.45s ease;
+}
+
+.form-field form button:hover{
+    background-color: #4859a5c7;
+}
