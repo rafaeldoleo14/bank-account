@@ -1,0 +1,10 @@
+
+.layout-container{
+    display: flex;
+    height: 100vh;
+}
+
+.layout-container .accounts-content{
+    width: calc(100% - 15em);
+    background-color: aliceblue;
+}

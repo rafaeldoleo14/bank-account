@@ -1,7 +1,17 @@
 import { FC } from "react"
+import './Dasboard.css';
+import { dashboardOpcions } from "../../utils/getDashboardOpcions";
 
 export const Dashboard: FC = () => {
   return (
-    <div>Hello World</div>
+    <div className="menu-container">
+
+      {
+        dashboardOpcions.map(({text, icon})=> (
+          <p className="active"> {icon} {text}</p>
+        ))
+      }
+
+    </div>
   )
 }
