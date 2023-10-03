@@ -1,11 +1,12 @@
 
 import {Routes, Route, Navigate} from 'react-router-dom'
+import { CreatePage } from '../pages/createPage/CreatePage'
 
 export const AppRouter = () => {
   return (
     <Routes>
 
-      <Route path='/new-account' element={<h1>Hello World</h1>}/>
+      <Route path='/new-account' element={<CreatePage/>}/>
 
       <Route path='/list-accounts' element={<h1>Hello World 2</h1>}/>
 
