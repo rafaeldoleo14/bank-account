@@ -1,8 +1,13 @@
 import { FC } from "react"
-
+import { Layout } from "./bank/layout/Layout"
+import { AppRouter } from "./bank/routes/AppRouter"
 
 export const BankApp: FC = () => {
   return (
-    <div>BankApp</div>
+    <Layout>
+
+      <AppRouter/>
+      
+    </Layout>
   )
 }
