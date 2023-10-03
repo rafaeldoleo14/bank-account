@@ -1,0 +1,89 @@
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    width: 100%;
+    background-color: #4859a5;
+    align-items: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.nav-bar div:nth-child(1){
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-bar h1{
+    font-size: 1.6em;
+}
+
+.nav-bar p{
+    font-size: 1.1em;
+}
+
+.nav-bar .navbar-options{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    background-color: #cfceff;
+    border-radius: 30px;
+}
+
+.circle div{
+    top: 18px;
+    right: 58px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    font-size: 0.8em;
+}
+
+.exit-button{
+    cursor: pointer;
+}
+
+.hiden-icon{
+    display: none;
+}
+
+.toogle-icons{
+    display: none;
+}
+
+@media only screen and (max-width:465px){
+  
+    .nav-bar div:nth-child(1),
+    .nav-bar .navbar-options{
+        display: none;
+    }
+
+    .nav-bar{
+        justify-content: space-between;
+    }
+
+    .hiden-icon{
+        display: flex;
+    }
+
+    .toogle-icons{
+        display: flex;
+    }
+
+}
