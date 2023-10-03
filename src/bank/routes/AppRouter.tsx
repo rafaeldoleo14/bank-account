@@ -17,7 +17,7 @@ export const AppRouter = () => {
 
       <Route path='/check-balance' element={<h1>Hello World 6</h1>}/>
 
-      <Route path='/*' element={<Navigate to='/new'/>} />
+      <Route path='/*' element={<Navigate to='/new-account'/>} />
 
     </Routes>
   )

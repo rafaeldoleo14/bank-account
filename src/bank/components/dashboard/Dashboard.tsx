@@ -8,7 +8,7 @@ export const Dashboard: FC = () => {
 
       {
         dashboardOpcions.map(({text, icon})=> (
-          <p className="active"> {icon} {text}</p>
+          <p key={text} className="active"> {icon} {text}</p>
         ))
       }
 
