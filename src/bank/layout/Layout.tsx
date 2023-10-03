@@ -10,10 +10,14 @@ export const Layout: FC<LayoutProp> = ({children}) => {
   return (
     <div className="layout-container">
 
-        <Dashboard/>
+        <div className="accounts-container">
 
-        <div className="accounts-content">
-            {children}
+          <Dashboard/>
+
+          <div className="accounts-content">
+              {children}
+          </div>
+
         </div>
 
     </div>
