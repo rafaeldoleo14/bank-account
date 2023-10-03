@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BankApp } from './BankApp'
 import './global.css'
+import { BankApp } from './BankApp'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
