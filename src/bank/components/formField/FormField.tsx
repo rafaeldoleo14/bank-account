@@ -1,10 +1,11 @@
 import { FC, } from "react";
-import './FormFiel.css';
+import './FormField.css';
 import { useForm } from "../../hooks/useForm";
+import { DinamicFormField } from "./dinamicFormField/DinamicFormField";
 
 export const FormField: FC = () => {
 
-    const { formData, handleChange, onSubmit } = useForm();
+  const { formData, handleChange, onSubmit } = useForm();
 
   return (
     <div className="form-field">
@@ -17,15 +18,16 @@ export const FormField: FC = () => {
             <input type="text" placeholder="Apellidos" name="apellidos" onChange={handleChange} value={formData.apellidos}/>
             <input type="text" placeholder="DNI" name="dni" onChange={handleChange} value={formData.dni}/>
             <input type="text" placeholder="IBAN" name="iban" onChange={handleChange} value={formData.iban}/>
+            <input type="number" placeholder="Saldo Inicial" name="saldo" onChange={handleChange} value={formData.saldo}/>
 
             <select name="cuentas" id="" onChange={handleChange} value={formData.cuentas}>
                 <option value="" disabled selected>Seleccionar tipo de cuenta</option>
                 <option value="ahorro">Cuenta ahorro</option>
-                <option value="persona">Cuenta corriente personal</option>
+                <option value="personal">Cuenta corriente personal</option>
                 <option value="corriente">Cuenta corriente empresa</option>
             </select>
 
-            <input type="number" placeholder="Interes" name="interes" onChange={handleChange} value={formData.interes}/>
+            <DinamicFormField formData={formData} handleChange={handleChange}/>
 
             <button>Crear cuenta</button>
 
