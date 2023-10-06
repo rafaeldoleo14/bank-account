@@ -15,3 +15,11 @@
     background-color: aliceblue;
     padding: 5em 6em;
 }
+
+@media (max-width: 810px){
+
+    .layout-container .accounts-content{
+        padding: 5em 5%;
+    }
+
+}

@@ -1,6 +1,8 @@
+import { FC } from "react"
+import { FormField } from "../../components/formField/FormField"
 
-export const CreatePage = () => {
+export const CreatePage: FC = () => {
   return (
-    <h1>CreatePage</h1>
+    <FormField/>
   )
 }
