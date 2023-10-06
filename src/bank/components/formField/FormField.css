@@ -28,7 +28,6 @@
     color: rgba(128, 128, 128, 0.789);
 }
 
-
 .form-field form button{
     border: none;
     outline: none;
@@ -39,6 +38,7 @@
     font-size: 16px;
     cursor: pointer;
     transition: all 0.45s ease;
+    grid-column: 1/2;
 }
 
 .form-field form button:hover{

@@ -1,24 +1,22 @@
 
 import React, { useState } from 'react'
-
-export interface FormData {
-    name: string;
-    apellidos: string;
-    dni: string;
-    iban: string;
-    cuentas: string;
-    interes: number;
-}
+import { FormData } from '../interfaces/formField/formField';
 
 export const useForm = () => {
-  
+
     const [formData, setFormData] = useState<FormData>({
-        name: "",
-        apellidos: "",
-        dni: "",
-        iban: "",
-        cuentas: "",
-        interes: 0
+        name: '',
+        apellidos: '',
+        dni: '',
+        iban: '',
+        saldo: '',
+        cuentas: '',
+        interes: '',
+        entidades: '',
+        comision: '',
+        interesDescubierto: '',
+        maximoDescubierto: '',
+        comisionDescubierto: '',
     });
 
     const onSubmit = (e: React.FormEvent<HTMLFormElement>)=>{
