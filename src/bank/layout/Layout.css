@@ -16,10 +16,37 @@
     padding: 5em 6em;
 }
 
+.close-menu{
+    display: none;
+}
+
 @media (max-width: 810px){
 
     .layout-container .accounts-content{
         padding: 5em 5%;
+    }
+
+}
+
+@media (max-width: 590px){
+
+    .layout-container .accounts-content{
+        width: 100%;
+        background-color: aliceblue;
+        padding: 5em 6em;
+    }
+
+    .layout-container .accounts-content{
+        padding: 3em 5%;
+    }
+
+    .close-menu{
+        display: flex;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.293);
+        right: 0;
+        width: calc(100% - 14em);
+        height: 100%;
     }
 
 }

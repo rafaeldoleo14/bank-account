@@ -1,13 +1,21 @@
-import { FC, ReactNode } from "react"
+import { FC, useState } from "react"
 import './Layout.css';
 import { Dashboard } from "../components/dashboard/Dashboard";
 import { NavBar } from "../components/navbar/NavBar";
-
-interface LayoutProp {
-    children: ReactNode
-}
+import { LayoutProp } from "../interfaces/layout/layout";
 
 export const Layout: FC<LayoutProp> = ({children}) => {
+
+  // Prueba
+
+  const [showDashboard, setShowDashboard] = useState<boolean>(true);
+
+  const onClick = ()=>{
+    setShowDashboard(!showDashboard);
+  }
+
+  // Cierre prueba
+
   return (
     <div className="layout-container">
 
@@ -15,7 +23,11 @@ export const Layout: FC<LayoutProp> = ({children}) => {
 
         <div className="accounts-container">
 
-          <Dashboard/>
+        <div className="close-menu" onClick={onClick} style={{display: showDashboard ? 'flex' : 'none', transition: 'transition: all 0.30s ease'}}>
+          
+        </div>
+
+          <Dashboard showDashboard={showDashboard}/>
 
           <div className="accounts-content">
               {children}

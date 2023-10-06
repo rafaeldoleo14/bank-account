@@ -3,10 +3,16 @@ import './Dasboard.css';
 import { dashboardOpcions } from "../../utils/getDashboardOpcions";
 import {NavLink} from 'react-router-dom'
 
-export const Dashboard: FC = () => {
+interface DashboardProp {
+  showDashboard: boolean
+}
+
+export const Dashboard: FC<DashboardProp> = ({showDashboard}) => {
+
+  console.log(showDashboard);
 
   return (
-    <div className="menu-container">
+    <div className={`menu-container ${showDashboard ? 'active' : ''}`}>
 
       {
         dashboardOpcions.map(({text, icon, path})=> (
