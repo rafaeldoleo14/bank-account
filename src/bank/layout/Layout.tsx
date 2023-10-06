@@ -1,20 +1,19 @@
-import { FC, useState } from "react"
+import { FC } from "react"
 import './Layout.css';
 import { Dashboard } from "../components/dashboard/Dashboard";
 import { NavBar } from "../components/navbar/NavBar";
 import { LayoutProp } from "../interfaces/layout/layout";
+import { useAppDispatch, useAppSelector } from "../store/store";
+import { onShowDashboard } from "../store/slices/ui/UISlice";
 
 export const Layout: FC<LayoutProp> = ({children}) => {
 
-  // Prueba
+  const {showDashboard} = useAppSelector(state => state.ui);
+  const dispatch = useAppDispatch();
 
-  const [showDashboard, setShowDashboard] = useState<boolean>(true);
-
-  const onClick = ()=>{
-    setShowDashboard(!showDashboard);
-  }
-
-  // Cierre prueba
+    const handleShowDashboard = ()=>{
+        dispatch(onShowDashboard());
+    }
 
   return (
     <div className="layout-container">
@@ -23,11 +22,11 @@ export const Layout: FC<LayoutProp> = ({children}) => {
 
         <div className="accounts-container">
 
-        <div className="close-menu" onClick={onClick} style={{display: showDashboard ? 'flex' : 'none', transition: 'transition: all 0.30s ease'}}>
+        <div onClick={handleShowDashboard} className="close-menu" style={{right: showDashboard ? '' : '-10000px',}}>
           
         </div>
 
-          <Dashboard showDashboard={showDashboard}/>
+          <Dashboard/>
 
           <div className="accounts-content">
               {children}

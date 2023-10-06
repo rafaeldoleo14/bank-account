@@ -3,8 +3,20 @@ import './NavBar.css'
 import { RxExit } from 'react-icons/rx';    
 import {PiPiggyBankDuotone} from 'react-icons/pi';
 import {MdAccountCircle} from 'react-icons/md';
+import {BiMenuAltLeft} from 'react-icons/bi';
+import {AiOutlineClose} from 'react-icons/ai';
+import { useAppDispatch, useAppSelector } from '../../store/store';
+import { onShowDashboard } from '../../store/slices/ui/UISlice';
 
 export const NavBar: FC = () =>{
+
+    const {showDashboard} = useAppSelector(state => state.ui);
+    const dispatch = useAppDispatch();
+
+    const handleShowDashboard = ()=>{
+        dispatch(onShowDashboard());
+    }
+
     return (
             <header className='nav-bar'>
 
@@ -32,7 +44,11 @@ export const NavBar: FC = () =>{
                </div>
 
                <div className='toogle-icons'>
-                    menu
+
+                    {
+                        showDashboard ? <AiOutlineClose size={30} onClick={handleShowDashboard}/> : <BiMenuAltLeft size={35} onClick={handleShowDashboard}/>
+                    }
+                    
                </div>
 
                <div className="hiden-icon">

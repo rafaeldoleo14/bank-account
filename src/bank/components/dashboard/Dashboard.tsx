@@ -2,14 +2,11 @@ import { FC } from "react"
 import './Dasboard.css';
 import { dashboardOpcions } from "../../utils/getDashboardOpcions";
 import {NavLink} from 'react-router-dom'
+import { useAppSelector } from "../../store/store";
 
-interface DashboardProp {
-  showDashboard: boolean
-}
+export const Dashboard: FC = () => {
 
-export const Dashboard: FC<DashboardProp> = ({showDashboard}) => {
-
-  console.log(showDashboard);
+  const {showDashboard} = useAppSelector(state => state.ui);
 
   return (
     <div className={`menu-container ${showDashboard ? 'active' : ''}`}>
