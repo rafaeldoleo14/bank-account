@@ -5,6 +5,10 @@
     height: 100%;
 }
 
+.form-field h1{
+    color: #192850;
+}
+
 .form-field form{
     display: grid;
     gap: 20px;
@@ -39,4 +43,16 @@
 
 .form-field form button:hover{
     background-color: #4859a5c7;
+}
+
+@media (max-width: 862px){
+
+    .form-field h1{
+        text-align: center;
+    }
+
+    .form-field form{
+        grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    }
+
 }
