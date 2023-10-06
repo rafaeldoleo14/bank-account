@@ -2,10 +2,17 @@ import { FC, } from "react";
 import './FormField.css';
 import { useForm } from "../../hooks/useForm";
 import { DinamicFormField } from "./dinamicFormField/DinamicFormField";
+import { useAppDispatch } from "../../store/store";
+import { onNewAccount } from "../../store/slices/bank/bankSlice";
 
 export const FormField: FC = () => {
 
   const { formData, handleChange, onSubmit } = useForm();
+  const dispatch = useAppDispatch();
+
+  const handleNewAccount = ()=>{
+    dispatch(onNewAccount(formData))
+  }
 
   return (
     <div className="form-field">
@@ -29,7 +36,7 @@ export const FormField: FC = () => {
 
             <DinamicFormField formData={formData} handleChange={handleChange}/>
 
-            <button>Crear cuenta</button>
+            <button onClick={handleNewAccount}>Crear cuenta</button>
 
         </form>
 
