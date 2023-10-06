@@ -1,6 +1,7 @@
 
 import {Routes, Route, Navigate} from 'react-router-dom'
 import { CreatePage } from '../pages/createPage/CreatePage'
+import { ListAccount } from '../components/list-account/ListAccount'
 
 export const AppRouter = () => {
   return (
@@ -8,7 +9,7 @@ export const AppRouter = () => {
 
       <Route path='/new-account' element={<CreatePage/>}/>
 
-      <Route path='/list-accounts' element={<h1>Hello World 2</h1>}/>
+      <Route path='/list-accounts' element={<ListAccount/>}/>
 
       <Route path='/get-data' element={<h1>Hello World 3</h1>}/>
 
