@@ -17,6 +17,12 @@ export const bankSlice = createSlice({
 
         onNewAccount: (state, action: PayloadAction<FormData>)=> {
 
+            const currentAccount = state.bankNewAccount.map(account => (account.iban))
+
+            if(currentAccount.includes(action.payload.iban)){ // if has the same IBAN, not can to include in the array
+                return;
+            }
+
             state.bankNewAccount.push(action.payload);
 
         }
