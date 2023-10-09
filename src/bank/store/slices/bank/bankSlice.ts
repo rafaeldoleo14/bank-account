@@ -1,13 +1,16 @@
 
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { FormData } from '../../../interfaces/formField/formField';
+import Swal from 'sweetalert2';
 
 interface BankState {
-    bankNewAccount: FormData[]
+    bankNewAccount: FormData[],
+    err: boolean | string
 }
 
 const initialState: BankState = {
-    bankNewAccount: []
+    bankNewAccount: [],
+    err: false
 }
 
 export const bankSlice = createSlice({
@@ -20,10 +23,22 @@ export const bankSlice = createSlice({
             const currentAccount = state.bankNewAccount.map(account => (account.iban))
 
             if(currentAccount.includes(action.payload.iban)){ // if has the same IBAN, not can to include in the array
+                state.err = 'IBAN IS USED'
+                Swal.fire(
+                    'IBAN en uso!',
+                    '',
+                    'error'
+                )
                 return;
             }
 
             state.bankNewAccount.push(action.payload);
+            Swal.fire(
+                'Cuenta Agregada !!!',
+                '',
+                'success',
+              )
+            state.err = false;
 
         }
 

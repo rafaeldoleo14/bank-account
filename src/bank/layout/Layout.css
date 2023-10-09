@@ -11,9 +11,11 @@
 }
 
 .layout-container .accounts-content{
+    margin-left: 15em;
     width: calc(100% - 15em);
     background-color: aliceblue;
-    padding: 5em 6em;
+    padding: 7em 6em 5em 6em;
+    height: 200vh;
 }
 
 .close-menu{
@@ -48,6 +50,14 @@
         width: calc(100% - 14em);
         height: 100%;
         transition: all 0.30s ease;
+    }
+
+}
+
+@media (max-width: 590px){
+
+    .layout-container .accounts-content{
+        margin-left: 0em;
     }
 
 }
