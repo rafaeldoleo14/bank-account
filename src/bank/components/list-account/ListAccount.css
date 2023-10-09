@@ -6,6 +6,7 @@
 
 .list-account-container h1{
     color: #192850;
+    margin-bottom: 1.5em;
 }
 
 .account-properties{
@@ -24,6 +25,12 @@
     align-items: center;
     justify-content: center;
     gap: 2px;
+}
+
+.account-tables{
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
 }
 
 table{

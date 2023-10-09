@@ -1,74 +1,25 @@
 import {FC} from 'react';
 import './ListAccount.css'
 import { ListItems } from '../list-account-items/ListItems';
-
-   export  interface Data{
-        nombre: string;
-        saldo: number;
-        iban: string;
-        interesAnual: number;
-    }
+import { useAppSelector } from '../../store/store';
 
 export const ListAccount: FC = () =>{
 
-    const data: Data[] = [
-
-        {
-            nombre: 'Rafael',
-            saldo: 20.0,
-            iban: 'ES12345678',
-            interesAnual: 10.0
-        },
-        {
-            nombre: 'Rafael',
-            saldo: 20.0,
-            iban: 'ES12345678',
-            interesAnual: 10.0
-        },
-        {
-            nombre: 'Rafael',
-            saldo: 20.0,
-            iban: 'ES12345678',
-            interesAnual: 10.0
-        },
-        {
-            nombre: 'Rafael',
-            saldo: 20.0,
-            iban: 'ES12345678',
-            interesAnual: 10.0
-        }
-    ]
-    
-    
+    const {bankNewAccount} = useAppSelector(state => state.bank);
 
     return(
         <div className='list-account-container'>
-          <h1>Lista de cuentas</h1>
 
-            <table>
+          {
+            bankNewAccount.length != 0 ? <h1>Lista de cuentas</h1> : <h1>No hay mio</h1>
+          }
 
-               <thead>
-               <tr>
-                    <th>Nombre</th>
-                    <th>Saldo</th>
-                    <th>IBAN</th>
-                    <th>Interes Anual</th>
-                </tr>
-               </thead>
-
-                <tbody>
-                {
-                    data.map((data) => (
-                        <ListItems {...data}/>
-                    ))
-                }
-             
-               
-                </tbody>
-                
-            </table>
+            <div className='account-tables'>
+                <ListItems types='ahorro' title='Cuenta Ahorro'/>
+                <ListItems types='personal' title='Cuenta Personal'/>
+                <ListItems types='empresarial' title='Cuenta Empresarial'/>
+            </div>
           
-
         </div>
     )
 }

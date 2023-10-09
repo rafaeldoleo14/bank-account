@@ -1,7 +1,7 @@
 
 import { useAppSelector } from '../store/store'
 
-type Cuentas = 'ahorro' | 'personal' | 'corriente'; 
+type Cuentas = 'ahorro' | 'personal' | 'empresarial'; 
 
 export const getAccountsByType = (type: Cuentas) => {
 

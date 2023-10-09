@@ -31,7 +31,7 @@ export const FormField: FC = () => {
                 <option value="" disabled selected>Seleccionar tipo de cuenta</option>
                 <option value="ahorro">Cuenta ahorro</option>
                 <option value="personal">Cuenta corriente personal</option>
-                <option value="corriente">Cuenta corriente empresa</option>
+                <option value="empresarial">Cuenta corriente empresa</option>
             </select>
 
             <DinamicFormField formData={formData} handleChange={handleChange}/>

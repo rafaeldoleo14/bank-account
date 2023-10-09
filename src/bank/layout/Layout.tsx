@@ -22,9 +22,9 @@ export const Layout: FC<LayoutProp> = ({children}) => {
 
         <div className="accounts-container">
 
-        <div onClick={handleShowDashboard} className="close-menu" style={{right: showDashboard ? '' : '-10000px',}}>
-          
-        </div>
+          <div onClick={handleShowDashboard} className="close-menu" style={{right: showDashboard ? '' : '-10000px',}}>
+            
+          </div>
 
           <Dashboard/>
 
