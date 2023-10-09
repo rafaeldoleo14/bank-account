@@ -29,7 +29,7 @@ export const DinamicFormField: FC<DinamicFieldProp> = ({formData, handleChange})
             }
 
             {
-              formData.cuentas == 'corriente' ? 
+              formData.cuentas == 'empresarial' ? 
               (
                 <>
                   <input type="text" placeholder="Entidades Autorizadas" name="entidades" onChange={handleChange} value={formData.entidades}/>

@@ -1,5 +1,5 @@
 
-type Cuentas = 'ahorro' | 'personal' | 'corriente' | ''; 
+type Cuentas = 'ahorro' | 'personal' | 'empresarial' | ''; 
 
 export interface FormData {
     name: string;
