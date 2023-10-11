@@ -1,7 +1,8 @@
 
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { FormData } from '../../../interfaces/formField/formField';
-import Swal from 'sweetalert2';
+import { deletePropsByAccount } from '../../../utils/deletePropsByAccount';
+import { errorIbanMessage, newAccountSaveMessage } from '../../../utils/showSweetAlert';
 
 interface BankState {
     bankNewAccount: FormData[],
@@ -24,20 +25,16 @@ export const bankSlice = createSlice({
 
             if(currentAccount.includes(action.payload.iban)){ // if has the same IBAN, not can to include in the array
                 state.err = 'IBAN IS USED'
-                Swal.fire(
-                    'IBAN en uso!',
-                    '',
-                    'error'
-                )
+                errorIbanMessage();
                 return;
             }
 
+            deletePropsByAccount(action);
+
             state.bankNewAccount.push(action.payload);
-            Swal.fire(
-                'Cuenta Agregada !!!',
-                '',
-                'success',
-              )
+
+            newAccountSaveMessage();
+
             state.err = false;
 
         }
